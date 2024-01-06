@@ -49,7 +49,8 @@ namespace LeaveManagment.Web.Controllers
                 return NotFound();
             }
 
-            return View(leaveType);
+            var leaveTypeVm = _mapper.Map<LeaveTypeVM>(leaveType);
+            return View(leaveTypeVm);
         }
 
         // GET: LeaveTypes/Create
