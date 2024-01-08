@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using LeaveManagment.Web.Configurations;
 using LeaveManagment.Web.Contracts;
 using LeaveManagment.Web.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
