@@ -4,6 +4,8 @@ using LeaveManagment.Web.Configurations;
 using LeaveManagment.Web.Contracts;
 using LeaveManagment.Web.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using LeaveManagment.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+//use papercut-smpt for example
+builder.Services.AddTransient<IEmailSender>(s => new EmailSender("localhost", 25, "no-reply@leavemanagmement.com"));
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 
