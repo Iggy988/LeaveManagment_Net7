@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using LeaveManagment.Web.Constants;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -10,14 +11,14 @@ public class RoleSeedConfiguration : IEntityTypeConfiguration<IdentityRole>
         builder.HasData(new IdentityRole
         {
             Id = "07e65fb8-2o67-4912-807b-db9c5578c15i",
-            Name = "Administrator",
-            NormalizedName = "ADMINISTRATOR",
+            Name = Roles.Administrator,
+            NormalizedName = Roles.Administrator.ToUpper(),
         },
         new IdentityRole
         {
             Id = "07e65fb7-2o67-4131-807b-db9c5578c15i",
-            Name = "User",
-            NormalizedName = "USER",
+            Name = Roles.User,
+            NormalizedName = Roles.User.ToUpper(),
         });
     }
 }
