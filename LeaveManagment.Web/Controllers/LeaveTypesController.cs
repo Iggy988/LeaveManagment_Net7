@@ -20,12 +20,14 @@ namespace LeaveManagment.Web.Controllers
         //private readonly ApplicationDbContext _context;
         private readonly ILeaveTypeRepository _leaveTypeRepository;
         private readonly IMapper _mapper;
+        private readonly ILeaveAllocationRepository _leaveAllocationRepository;
 
-        public LeaveTypesController(ILeaveTypeRepository leaveTypeRepository, IMapper mapper /*ApplicationDbContext context*/)
+        public LeaveTypesController(ILeaveTypeRepository leaveTypeRepository, IMapper mapper, ILeaveAllocationRepository leaveAllocationRepository /*ApplicationDbContext context*/)
         {
             //_context = context
             _leaveTypeRepository = leaveTypeRepository;
             _mapper = mapper;
+            _leaveAllocationRepository = leaveAllocationRepository;
         }
 
         // GET: LeaveTypes
@@ -194,7 +196,8 @@ namespace LeaveManagment.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AllocateLeave(int id)
         {
-            throw new NotImplementedException();
+            await _leaveAllocationRepository.LeaveAllocation(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
