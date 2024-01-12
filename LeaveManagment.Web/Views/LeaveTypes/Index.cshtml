@@ -43,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.DateModified)
             </td> *@
             <td>
-                    <button data-idd="@item.Id" class="alocateBtn btn btn-primary m-1" type="button"><i class="fa-solid fa-adversal"></i> Allocate Leave</button>
+                    <button data-id="@item.Id" class="alocateBtn btn btn-primary m-1" type="button"><i class="fa-solid fa-adversal"></i> Allocate Leave</button>
                     <a asp-action="Edit" class="btn btn-warning m-1" asp-route-id="@item.Id"><i class="fa-solid fa-pencil"></i> Edit</a>
                     <a asp-action="Details" class="btn btn-info m-1" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i> Details</a>
                 @* <a asp-action="Delete" class="btn btn-danger deleteBtn" asp-route-id="@item.Id">Delete</a> *@
@@ -61,7 +61,7 @@
 </form>
 
 <form id="allocationForm" asp-action="AllocateLeave">
-    <input type="hidden" id="leaveTypeId" name="Id" />
+    <input type="hidden" id="leaveTypeAllocate" name="Id" />
 </form>
 
 @section Scripts{
@@ -100,8 +100,8 @@
                 }).then((confirm) => {
                     if (confirm) {
                         var btn = $(this);
-                        var id = btn.data("idd");
-                        $('#leaveTypeId').val(id);
+                        var id = btn.data("id");
+                        $('#leaveTypeAllocate').val(id);
                         $('#allocationForm').submit();
                     }
                 });

@@ -51,6 +51,6 @@ public class LeaveAllocationRepository : GenericRepository<LeaveAllocation>, ILe
             await AddRangeAsync(allocations);
         }
 
-        throw new NotImplementedException();
+       
     }
 }
