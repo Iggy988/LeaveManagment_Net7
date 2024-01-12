@@ -189,5 +189,12 @@ namespace LeaveManagment.Web.Controllers
         //  //return (_context.LeaveTypes?.Any(e => e.Id == id)).GetValueOrDefault();
         //  return await _leaveTypeRepository.Exists(id);
         //}
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AllocateLeave(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
