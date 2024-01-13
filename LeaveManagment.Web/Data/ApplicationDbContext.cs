@@ -1,6 +1,7 @@
 ﻿using LeaveManagment.Web.Configurations.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using LeaveManagment.Web.Models;
 
 namespace LeaveManagment.Web.Data;
 public class ApplicationDbContext : IdentityDbContext<Employee>

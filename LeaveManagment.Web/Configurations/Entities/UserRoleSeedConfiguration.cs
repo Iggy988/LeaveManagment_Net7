@@ -9,15 +9,16 @@ public class UserRoleSeedConfiguration : IEntityTypeConfiguration<IdentityUserRo
     public void Configure(EntityTypeBuilder<Microsoft.AspNetCore.Identity.IdentityUserRole<string>> builder)
     {
         builder.HasData(
-            new IdentityUserRole<string>
-            {
-                RoleId = "07e65fb8-2o67-4912-807b-db9c5578c15i",
-                UserId = "f52402a2-4558-4ec2-ac2f-81d33d5e55fd"
-            },
-            new IdentityUserRole<string>
-            {
-                RoleId = "07e65fb7-2o67-4131-807b-db9c5578c15i",
-                UserId = "07e65fb8-2e67-4912-807b-db9c5578c15a"
-            });
+             new IdentityUserRole<string>
+             {
+                 RoleId = "cac43a6e-f7bb-4448-baaf-1add431ccbbf",
+                 UserId = "408aa945-3d84-4421-8342-7269ec64d949"
+             },
+                new IdentityUserRole<string>
+                {
+                    RoleId = "cac43a7e-f7cb-4148-baaf-1acb431eabbf",
+                    UserId = "3f4631bd-f907-4409-b416-ba356312e659"
+                }
+            );
     }
 }

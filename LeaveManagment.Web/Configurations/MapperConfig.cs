@@ -10,5 +10,6 @@ public class MapperConfig: Profile
     {
         // source, destination
         CreateMap<LeaveType, LeaveTypeVM>().ReverseMap();
+        CreateMap<Employee, EmployeeListVM>().ReverseMap();
     }
 }

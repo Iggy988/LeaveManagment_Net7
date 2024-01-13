@@ -22,7 +22,9 @@ public class LeaveAllocationRepository : GenericRepository<LeaveAllocation>, ILe
     public async Task<bool> AllocationExists(string employeeId, int leaveTypeId, int period)
     {
         return await _context.LeaveAllocations.AnyAsync(
-            q => q.EmployeeId == employeeId && q.LeaveTypeId == leaveTypeId && q.Period == period);
+            q => q.EmployeeId == employeeId
+            && q.LeaveTypeId == leaveTypeId
+            && q.Period == period);
     }
 
     public async Task LeaveAllocation(int leaveTypeId)
